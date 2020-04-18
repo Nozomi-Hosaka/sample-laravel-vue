@@ -59,7 +59,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->namespace($this->namespace)
+            // Controller直下でなくても読み込めるようにコメントアウト。厳密にしたい場合はここのロジックを修正して下さい。
+            // ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
 
