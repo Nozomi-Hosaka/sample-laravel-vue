@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Top\ShowTopAction;
+use App\Http\Controllers\Vue\ShowVueAndLaravelPageAction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', ShowTopAction::class)->name('top');
+Route::get('/vue_laravel', ShowVueAndLaravelPageAction::class)->name('vue_laravel');

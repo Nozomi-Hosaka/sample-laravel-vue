@@ -7,7 +7,7 @@
 @section('content')
     ここはただのBlade製ページ
     <ul>
-        <li><a href="">Vue導入 - サーバーレンダリング</a></li>
+        <li><a href="{{route('vue_laravel')}}">Vue導入 - サーバーレンダリング</a></li>
         <li><a href="">Vue導入 - Vueレンダリング - SPAチック</a></li>
     </ul>
 @endsection
