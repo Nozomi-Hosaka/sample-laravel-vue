@@ -30,8 +30,9 @@ services:
     ports:
       - "127.0.0.1:3306:3306"
     environment:
-      TZ: ${TZ}
+      MYSQL_DATABASE: ${DB_NAME}
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      TZ: ${TZ}
     volumes:
       - ./infrastructure/mysql/my.cnf:/etc/mysql/conf.d/mysql.cnf:ro
       - ./infrastructure/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
