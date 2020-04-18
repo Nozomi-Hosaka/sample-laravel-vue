@@ -9,6 +9,11 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 /**
+ * This Project Plugins
+ */
+import router from "./plugins/router";
+
+/**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
@@ -30,4 +35,5 @@ Vue.component('display-input', require('./components/parts/DisplayInput.vue').de
 
 const app = new Vue({
     el: '#app',
+    router
 });

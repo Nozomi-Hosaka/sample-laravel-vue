@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+    <display-input></display-input>
 </template>
 
 <script>
     export default {
-        name: "App"
+        name: "Index"
     }
 </script>
 
