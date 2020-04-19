@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Project\Demo\Query;
+namespace Project\Demo;
 
 
 use http\Exception\InvalidArgumentException;

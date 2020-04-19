@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace Project\Demo\Query\UseCases\GetDemoList;
 
 
-use Project\Demo\Query\DemoCollection;
+use Project\Demo\DemoCollection;
 
 interface GetDemoQueryOutputPort
 {

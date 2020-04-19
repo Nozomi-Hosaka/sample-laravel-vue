@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Project\Demo\Query;
+namespace Project\Demo;
 
 
 class Demo
@@ -35,6 +35,30 @@ class Demo
         $this->id = $id;
         $this->name = $name;
         $this->status = $status;
+    }
+
+    /**
+     * @return int
+     */
+    public function id(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function name(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
 
     /**

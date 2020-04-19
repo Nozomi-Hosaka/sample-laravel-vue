@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use App\Adapters\Repositories\DemoRepository;
 use Illuminate\Support\ServiceProvider;
-use Project\Repositories\DemoRepositoryInterface;
+use Project\Demo\DemoFactory;
+use Project\Demo\DemoFactoryInterface;
 
-class RepositoryServiceProvider extends ServiceProvider
+class FactoryServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(DemoRepositoryInterface::class, DemoRepository::class);
+        $this->app->bind(DemoFactoryInterface::class, DemoFactory::class);
     }
 
     /**

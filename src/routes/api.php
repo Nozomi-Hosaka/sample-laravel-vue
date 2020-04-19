@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\GetApiDemoAction;
+use App\Http\Controllers\Api\Demo\CreateDemoAction;
+use App\Http\Controllers\Api\Demo\GetDemoAction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // FIXME: 認証基盤作成
-Route::get('/demo', GetApiDemoAction::class);
+Route::get('/demo', GetDemoAction::class);
+Route::post('/demo', CreateDemoAction::class);

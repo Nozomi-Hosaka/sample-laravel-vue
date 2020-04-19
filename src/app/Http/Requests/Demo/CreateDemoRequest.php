@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Demo;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Project\Demo\Query\UseCases\GetDemoList\GetDemoQueryInputPort;
+use Project\Demo\Command\UseCases\CreateDemo\CreateDemoInputPort;
+use Project\Demo\DemoStatus;
 
-class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
+class CreateDemoRequest extends FormRequest implements CreateDemoInputPort
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +26,20 @@ class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:256',
         ];
     }
 
     /**
-     * @inheritDoc
+     * @return array
      */
-    public function id(): int
+    public function messages()
     {
-        return $this->get('id');
+        return [
+            'name.required' => '名称は必須です。',
+            'name.string' => '名称は文字列で入力してください。',
+            'name.max' => '名称は256文字で入力して下さい。',
+        ];
     }
 
     /**
@@ -50,6 +55,6 @@ class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
      */
     public function status(): int
     {
-        return $this->get('status');
+        return $this->get('status', DemoStatus::STATUS_ENABLED);
     }
 }

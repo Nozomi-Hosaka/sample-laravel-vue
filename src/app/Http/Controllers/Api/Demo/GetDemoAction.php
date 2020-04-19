@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Demo;
 
 use App\Adapters\UseCases\ReadDemo\ReadDemoListModel;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GetDemoRequest;
+use App\Http\Requests\Demo\GetDemoRequest;
 use Illuminate\Http\JsonResponse;
 use Project\Demo\Query\UseCases\GetDemoList\GetDemoQueryInterface;
 
-class GetApiDemoAction extends Controller
+class GetDemoAction extends Controller
 {
     /**
      * @var GetDemoQueryInterface
