@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Demo\CreateDemoAction;
+use App\Http\Controllers\Api\Demo\DeleteDemoAction;
 use App\Http\Controllers\Api\Demo\GetDemoAction;
 use App\Http\Controllers\Api\Demo\UpdateDemoAction;
 use Illuminate\Http\Request;
@@ -25,3 +26,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/demo', GetDemoAction::class);
 Route::post('/demo', CreateDemoAction::class);
 Route::put('/demo/{id}', UpdateDemoAction::class);
+Route::delete('/demo/{id}', DeleteDemoAction::class);

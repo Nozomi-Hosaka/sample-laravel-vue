@@ -32,6 +32,7 @@ class UpdateDemoAction extends Controller
      * Handle the incoming request.
      *
      * @param UpdateDemoRequest $request
+     * @throws Throwable
      * @return JsonResponse
      */
     public function __invoke(UpdateDemoRequest $request)
@@ -44,7 +45,7 @@ class UpdateDemoAction extends Controller
         } catch (Throwable $e) {
             // エラー処理など
             DB::rollBack();
-            throw new $e;
+            throw $e;
         }
         return response()->json($output->demo()->toArray());
     }

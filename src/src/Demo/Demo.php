@@ -67,6 +67,14 @@ class Demo
     }
 
     /**
+     * @param DemoStatus $status
+     */
+    public function setStatus(DemoStatus $status): void
+    {
+        $this->status = $status;
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
