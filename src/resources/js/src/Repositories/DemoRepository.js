@@ -1,43 +1,43 @@
-import Api from "../Api";
+import Api from '../Api';
 
 class DemoRepository extends Api {
-    async findAll() {
-        const params = new URLSearchParams();
+  async findAll() {
+    const params = new URLSearchParams();
 
-        const res = await this._api.send('get', '/api/demo', params);
+    const res = await this._api.send('get', '/api/demo', params);
 
-        if (!this.checkErrorByResponseStatus(res)) {
-            return false;
-        }
-
-        return res.data;
+    if (!this.checkErrorByResponseStatus(res)) {
+      return false;
     }
 
-    async create(name) {
-        const params = new FormData();
-        params.append('name', name);
+    return res.data;
+  }
 
-        const res = await this._api.send('post', '/api/demo', params);
+  async create(name) {
+    const params = new FormData();
+    params.append('name', name);
 
-        if (!this.checkErrorByResponseStatus(res)) {
-            return false;
-        }
+    const res = await this._api.send('post', '/api/demo', params);
 
-        return res.data;
+    if (!this.checkErrorByResponseStatus(res)) {
+      return false;
     }
 
-    async update(id, name) {
-        const params = new FormData();
-        params.append('name', name);
+    return res.data;
+  }
 
-        const res = await this._api.send('put', '/api/demo/' + id, params);
+  async update(id, name) {
+    const params = new FormData();
+    params.append('name', name);
 
-        if (!this.checkErrorByResponseStatus(res)) {
-            return false;
-        }
+    const res = await this._api.send('put', '/api/demo/' + id, params);
 
-        return res.data;
+    if (!this.checkErrorByResponseStatus(res)) {
+      return false;
     }
+
+    return res.data;
+  }
 }
 
 export default DemoRepository;

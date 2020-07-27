@@ -1,16 +1,16 @@
-import Index from "../pages/Index";
+import Index from '../pages/Index';
 
 const routes = [
-    {
-        name: 'top',
-        path: '/spa',
-        component: Index,
-        meta: {
-            title: 'TOP',
-        }
+  {
+    name: 'top',
+    path: '/spa',
+    component: Index,
+    meta: {
+      title: 'TOP',
     }
+  }
 ];
 
 export default {
-    routes,
-}
+  routes,
+};

@@ -1,22 +1,22 @@
 <template>
-    <div>
-        <atom-input v-model="text"></atom-input>
-        Input text is {{ text }}
-    </div>
+  <div>
+    <atom-input v-model="text" />
+    Input text is {{ text }}
+  </div>
 </template>
 
 <script>
-    import AtomInput from "../atoms/AtomInput";
+import AtomInput from '../atoms/AtomInput';
 
-    export default {
-        name: "DisplayInput",
-        components: {AtomInput},
-        data() {
-            return {
-                text: '',
-            }
-        }
-    }
+export default {
+  name: 'DisplayInput',
+  components: {AtomInput},
+  data() {
+    return {
+      text: '',
+    };
+  }
+};
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@ window.Vue = require('vue');
 /**
  * This Project Plugins
  */
-import router from "./plugins/router";
+import router from './plugins/router';
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,6 +34,6 @@ Vue.component('display-input', require('./components/parts/DisplayInput.vue').de
  */
 
 const app = new Vue({
-    el: '#app',
-    router
+  el: '#app',
+  router
 });
