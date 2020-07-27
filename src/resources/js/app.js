@@ -24,7 +24,9 @@ import router from './plugins/router';
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+// eslint-disable-next-line no-undef
 Vue.component('app', require('./App.vue').default);
+// eslint-disable-next-line no-undef
 Vue.component('display-input', require('./components/parts/DisplayInput.vue').default);
 
 /**
@@ -33,6 +35,7 @@ Vue.component('display-input', require('./components/parts/DisplayInput.vue').de
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// eslint-disable-next-line no-unused-vars,no-undef
 const app = new Vue({
   el: '#app',
   router

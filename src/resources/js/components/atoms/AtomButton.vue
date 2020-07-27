@@ -48,34 +48,20 @@ export default {
       default: false,
     },
   },
-  data() {
-    return {
-      class: {
-        'btn': true,
-        'btn-primary': false,
-        'btn-secondary': false,
-        'btn-success': false,
-        'btn-danger': false,
-        'btn-warning': false,
-        'btn-info': false,
-        'btn-light': false,
-        'btn-dark': false,
-        'btn-link': false,
-      }
-    };
-  },
   computed: {
     btnClass() {
-      this.class['btn-primary'] = this.primary;
-      this.class['btn-secondary'] = this.secondary;
-      this.class['btn-success'] = this.success;
-      this.class['btn-danger'] = this.danger;
-      this.class['btn-warning'] = this.warning;
-      this.class['btn-info'] = this.info;
-      this.class['btn-light'] = this.light;
-      this.class['btn-dark'] = this.dark;
-      this.class['btn-link'] = this.link;
-      return this.class;
+      return {
+        'btn': true,
+        'btn-primary': this.primary,
+        'btn-secondary': this.secondary,
+        'btn-success': this.success,
+        'btn-danger': this.danger,
+        'btn-warning': this.warning,
+        'btn-info': this.info,
+        'btn-light': this.light,
+        'btn-dark': this.dark,
+        'btn-link': this.link,
+      };
     },
   },
   methods: {

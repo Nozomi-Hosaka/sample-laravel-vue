@@ -38,6 +38,16 @@ class DemoRepository extends Api {
 
     return res.data;
   }
+
+  async delete(id) {
+    const res = await this._api.send('delete', '/api/demo/' + id);
+
+    if (!this.checkErrorByResponseStatus(res)) {
+      return false;
+    }
+
+    return res.data;
+  }
 }
 
 export default DemoRepository;

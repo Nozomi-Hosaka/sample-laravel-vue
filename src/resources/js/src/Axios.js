@@ -5,7 +5,7 @@ class Axios {
     this._headers = headers;
   }
 
-  async send(method, url, params = null) {
+  async send(method, url, params = {}) {
     const config = {
       method: null,
       url: url,

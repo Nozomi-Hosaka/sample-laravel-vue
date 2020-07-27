@@ -60,6 +60,7 @@ import AtomInput from '../../components/atoms/AtomInput';
 import AtomButton from '../../components/atoms/AtomButton';
 import CreateDemo from '../../src/Demo/Query/UseCases/CreateDemo';
 import UpdateDemo from '../../src/Demo/Query/UseCases/UpdateDemo';
+import DeleteDemo from '../../src/Demo/Query/UseCases/DeleteDemo';
 
 export default {
   name: 'Index',
@@ -70,7 +71,7 @@ export default {
       getDemoUseCase: new GetDemo(new DemoRepository()),
       createDemoUseCase: new CreateDemo(new DemoRepository()),
       updateDemoUseCase: new UpdateDemo(new DemoRepository()),
-      deleteDemoUseCase: new GetDemo(new DemoRepository()),
+      deleteDemoUseCase: new DeleteDemo(new DemoRepository()),
       demos: [],
       name: '',
     };
@@ -91,12 +92,13 @@ export default {
     },
     async updateDemo(demo) {
       this.loading = true;
-      console.log(demo.id);
       await this.updateDemoUseCase.process(demo);
       this.loading = false;
     },
     async deleteDemo(demo) {
-      console.log('deleteDemo');
+      this.loading = true;
+      await this.deleteDemoUseCase.process(demo);
+      this.loading = false;
     },
   }
 };
