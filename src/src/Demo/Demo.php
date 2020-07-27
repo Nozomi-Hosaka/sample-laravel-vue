@@ -1,10 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-
 namespace Project\Demo;
-
 
 class Demo
 {
@@ -51,6 +48,14 @@ class Demo
     public function name(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return DemoStatus
+     */
+    public function status(): DemoStatus
+    {
+        return $this->status;
     }
 
     /**

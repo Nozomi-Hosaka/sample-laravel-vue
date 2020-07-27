@@ -3,8 +3,8 @@ class UpdateDemo {
         this._demoRepository = demoRepository;
     }
 
-    async process() {
-        return await this._demoRepository.findAll();
+    async process(demo) {
+        return await this._demoRepository.update(demo.id, demo.name);
     }
 }
 

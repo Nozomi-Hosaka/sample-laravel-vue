@@ -21,11 +21,15 @@
                     :key="index"
                 >
                     <td>[ {{ demo.id }} ]</td>
-                    <td>[ {{ demo.name }} ]</td>
-                    <td>[ {{ demo.status }} ]</td>
                     <td>
-                        <atom-button success @click="updateDemo">更新</atom-button>
-                        <atom-button danger @click="deleteDemo">削除</atom-button>
+                        <label>
+                            <input type="text" v-model="demo.name">
+                        </label>
+                    </td>
+                    <td>[ {{ demo.status === 1 ? '有効' : '無効' }} ]</td>
+                    <td>
+                        <atom-button success @click="updateDemo(demo)">更新</atom-button>
+                        <atom-button danger @click="deleteDemo(demo)">削除</atom-button>
                     </td>
                 </tr>
             </table>
@@ -40,6 +44,7 @@
     import AtomInput from "../../components/atoms/AtomInput";
     import AtomButton from "../../components/atoms/AtomButton";
     import CreateDemo from "../../src/Demo/Query/UseCases/CreateDemo";
+    import UpdateDemo from "../../src/Demo/Query/UseCases/UpdateDemo";
 
     export default {
         name: "Index",
@@ -49,7 +54,7 @@
                 loading: false,
                 getDemoUseCase: new GetDemo(new DemoRepository()),
                 createDemoUseCase: new CreateDemo(new DemoRepository()),
-                updateDemoUseCase: new GetDemo(new DemoRepository()),
+                updateDemoUseCase: new UpdateDemo(new DemoRepository()),
                 deleteDemoUseCase: new GetDemo(new DemoRepository()),
                 demos: [],
                 name: '',
@@ -69,10 +74,13 @@
                 await this.createDemoUseCase.process(this.name);
                 this.loading = false;
             },
-            async updateDemo() {
-                console.log('updateDemo');
+            async updateDemo(demo) {
+                this.loading = true;
+                console.log(demo.id);
+                await this.updateDemoUseCase.process(demo);
+                this.loading = false;
             },
-            async deleteDemo() {
+            async deleteDemo(demo) {
                 console.log('deleteDemo');
             },
         }

@@ -25,6 +25,19 @@ class DemoRepository extends Api {
 
         return res.data;
     }
+
+    async update(id, name) {
+        const params = new FormData();
+        params.append('name', name);
+
+        const res = await this._api.send('put', '/api/demo/' + id, params);
+
+        if (!this.checkErrorByResponseStatus(res)) {
+            return false;
+        }
+
+        return res.data;
+    }
 }
 
 export default DemoRepository;

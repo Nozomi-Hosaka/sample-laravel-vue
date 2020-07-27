@@ -16,9 +16,21 @@ interface DemoRepositoryInterface
     public function findAll(): DemoCollection;
 
     /**
+     * @param int $id
+     * @return Demo|null
+     */
+    public function findById(int $id): ?Demo;
+
+    /**
      * @param string $name
      * @param DemoStatus $status
      * @return Demo
      */
     public function create(string $name, DemoStatus $status): Demo;
+
+    /**
+     * @param Demo $demo
+     * @return Demo
+     */
+    public function save(Demo $demo): Demo;
 }
