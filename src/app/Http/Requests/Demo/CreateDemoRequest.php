@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Requests\Demo;
 
@@ -43,7 +44,7 @@ class CreateDemoRequest extends FormRequest implements CreateDemoInputPort
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function name(): string
     {
@@ -51,7 +52,7 @@ class CreateDemoRequest extends FormRequest implements CreateDemoInputPort
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function status(): int
     {

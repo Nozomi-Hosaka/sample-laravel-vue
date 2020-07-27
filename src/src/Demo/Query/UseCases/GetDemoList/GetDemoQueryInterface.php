@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
 namespace Project\Demo\Query\UseCases\GetDemoList;
-
 
 interface GetDemoQueryInterface
 {

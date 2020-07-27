@@ -13,5 +13,5 @@ interface UpdateDemoInputPort
     /**
      * @return string
      */
-    public function name():string;
+    public function name(): string;
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Requests\Demo;
 
@@ -30,7 +31,7 @@ class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function id(): int
     {
@@ -38,7 +39,7 @@ class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function name(): string
     {
@@ -46,7 +47,7 @@ class GetDemoRequest extends FormRequest implements GetDemoQueryInputPort
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function status(): int
     {
