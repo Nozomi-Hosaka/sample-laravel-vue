@@ -1,12 +1,13 @@
 <template>
   <div>
-    <display-input />
-
     <div>
       <atom-input v-model="name" />
       <atom-button @click="createDemo">
         登録
       </atom-button>
+      <p class="text-danger">
+        {{ error }}
+      </p>
     </div>
 
     <spinner v-if="loading" />
@@ -31,7 +32,7 @@
               >
             </label>
           </td>
-          <td>[ {{ demo.status === 1 ? '有効' : '無効' }} ]</td>
+          <td>[ {{ demo.status === 0 ? '有効' : '無効' }} ]</td>
           <td>
             <atom-button
               success
@@ -74,6 +75,7 @@ export default {
       deleteDemoUseCase: new DeleteDemo(new DemoRepository()),
       demos: [],
       name: '',
+      error: '',
     };
   },
   async created() {
@@ -87,18 +89,44 @@ export default {
     },
     async createDemo() {
       this.loading = true;
-      await this.createDemoUseCase.process(this.name);
+      const result = await this.createDemoUseCase.process(this.name);
+      if (result === false) {
+        this.error = '登録に失敗しました。';
+        return false;
+      }
+      this.demos.push(result);
       this.loading = false;
+      return true;
     },
     async updateDemo(demo) {
       this.loading = true;
-      await this.updateDemoUseCase.process(demo);
+      const result = await this.updateDemoUseCase.process(demo);
+      if (result === false) {
+        this.error = '更新に失敗しました。';
+        return false;
+      }
+      this.demos.forEach((item, key) => {
+        if (item.id === result.id) {
+          this.demos.splice(key, 1, result);
+        }
+      });
       this.loading = false;
+      return true;
     },
-    async deleteDemo(demo) {
+    deleteDemo: async function (demo) {
       this.loading = true;
-      await this.deleteDemoUseCase.process(demo);
+      const result = await this.deleteDemoUseCase.process(demo);
+      if (result === false) {
+        this.error = '削除に失敗しました。';
+        return false;
+      }
+      this.demos.forEach((item, key) => {
+        if (item.id === result.id) {
+          this.demos.splice(key, 1, result);
+        }
+      });
       this.loading = false;
+      return true;
     },
   }
 };
