@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
 namespace App\Adapters\UseCases\WriteDemo;
-
 
 use Project\Demo\Command\UseCases\UpdateDemo\UpdateDemoOutputPort;
 use Project\Demo\Demo;
@@ -23,7 +21,7 @@ class UpdateDemoModel implements UpdateDemoOutputPort
     /**
      * @return Demo
      */
-    public function demo():Demo
+    public function demo(): Demo
     {
         return $this->demo;
     }

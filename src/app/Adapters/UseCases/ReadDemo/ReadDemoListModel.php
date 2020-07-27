@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
 namespace App\Adapters\UseCases\ReadDemo;
-
 
 use Project\Demo\DemoCollection;
 use Project\Demo\Query\UseCases\GetDemoList\GetDemoQueryOutputPort;
@@ -17,7 +15,7 @@ class ReadDemoListModel implements GetDemoQueryOutputPort
     private DemoCollection $demoCollection;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function output(DemoCollection $demoCollection): void
     {

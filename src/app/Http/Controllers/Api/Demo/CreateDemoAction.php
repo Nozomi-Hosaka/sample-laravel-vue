@@ -32,8 +32,8 @@ class CreateDemoAction extends Controller
      * Handle the incoming request.
      *
      * @param CreateDemoRequest $request
-     * @return JsonResponse
      * @throws Throwable
+     * @return JsonResponse
      */
     public function __invoke(CreateDemoRequest $request)
     {

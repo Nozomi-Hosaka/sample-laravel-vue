@@ -1,10 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-
 namespace Project\Demo\Command\UseCases\CreateDemo;
-
 
 use Project\Demo\DemoFactoryInterface;
 use Project\Demo\DemoStatus;
@@ -27,7 +24,7 @@ class CreateDemo implements CreateDemoInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function process(CreateDemoInputPort $inputPort, CreateDemoOutputPort $outputPort): void
     {

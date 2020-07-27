@@ -1,10 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-
 namespace Project\Demo\Query\UseCases\GetDemoList;
-
 
 use Project\Repositories\DemoRepositoryInterface;
 
@@ -26,7 +23,7 @@ class GetDemoQuery implements GetDemoQueryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function process(GetDemoQueryInputPort $inputPort, GetDemoQueryOutputPort $outputPort): void
     {

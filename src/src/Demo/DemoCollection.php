@@ -1,12 +1,9 @@
 <?php
-
 declare(strict_types=1);
-
 
 namespace Project\Demo;
 
-
-use http\Exception\InvalidArgumentException;
+use InvalidArgumentException;
 
 class DemoCollection
 {

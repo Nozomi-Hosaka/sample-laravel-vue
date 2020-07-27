@@ -27,7 +27,7 @@ class DemoRepository implements DemoRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findAll(): DemoCollection
     {
@@ -46,7 +46,7 @@ class DemoRepository implements DemoRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function create(string $name, DemoStatus $status): \Project\Demo\Demo
     {

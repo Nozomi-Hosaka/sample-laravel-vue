@@ -1,12 +1,9 @@
 <?php
-
 declare(strict_types=1);
-
 
 namespace Project\Demo;
 
-
-use http\Exception\InvalidArgumentException;
+use InvalidArgumentException;
 
 class DemoStatus
 {
@@ -46,7 +43,7 @@ class DemoStatus
     private function validate(int $status)
     {
         $expects = [self::STATUS_ENABLED, self::STATUS_DISABLED];
-        if (!in_array($status, $expects)) {
+        if (!in_array($status, $expects, true)) {
             throw new InvalidArgumentException(sprintf('DemoStauts must be %s', implode(' or ', $expects)));
         }
     }

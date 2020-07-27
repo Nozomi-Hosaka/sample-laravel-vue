@@ -1,10 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-
 namespace Project\Demo;
-
 
 use Project\Repositories\DemoRepositoryInterface;
 
@@ -26,7 +23,7 @@ class DemoFactory implements DemoFactoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function newDemo(string $name, DemoStatus $status): Demo
     {
