@@ -73,3 +73,12 @@ docker-compose run --rm node npm run prod
 ```bash
 docker-compose run --rm composer composer dump-autoload 
 ```
+
+### PHP-CS-FIXER
+```bash
+# コードチェック
+docker-compose run --rm php-cs-fixer
+
+# コード自動修正
+docker-compose run --rm php-cs-fixer fix -vv
+```
